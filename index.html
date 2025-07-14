@@ -27,6 +27,20 @@
             <div class="content-text">
                 <p><span class="text-primary">HI There, I'm</span></p>
                 <h1>Oula Abd Almoty</h1>
+                <P id="title"></P>
+
+<script>
+  const text = "Welcome to My Professional Website";
+  let i = 0;
+  function typeWriter() {
+    if (i < text.length) {
+      document.getElementById("title").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 80);
+    }
+  }
+  window.onload = typeWriter;
+</script>
                 <p class="title">Full Stack Developer.</p>
                 <div class="social">
                     <a href="https://www.linkedin.com/in/oula-abd-al-moty92/"target="_blank">
@@ -220,7 +234,10 @@
           </section>
     </main>
     <footer id="footer">
-        <p>&copy; 2025 | All rights reserved </p>
+        <p>&copy; <span id="year"></span> OULA. All rights reserved.</p>
     </footer>
+     <script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
